@@ -1,0 +1,47 @@
+{
+  "prepare": [
+    "@semantic-release/npm",
+    {
+      "path": "@semantic-release/exec",
+      "cmd": "npm i -g pkg && pkg . && shasum -a 256 bintest-linux > bintest-linux.sha256 && shasum -a 256 bintest-macos > bintest-macos.sha256 && shasum -a 256 bintest-win.exe > bintest-win.exe.sha256"
+    }
+  ],
+  "publish": [
+    "@semantic-release/npm",
+    {
+      "path": "@semantic-release/github",
+      "assets": [
+        {
+          "path": "./bintest-linux",
+          "name": "bintest-linux",
+          "label": "bintest-linux"
+        },
+        {
+          "path": "./bintest-linux.sha256",
+          "name": "bintest-linux.sha256",
+          "label": "bintest-linux.sha256"
+        },
+        {
+          "path": "./bintest-macos",
+          "name": "bintest-macos",
+          "label": "bintest-macos"
+        },
+        {
+          "path": "./bintest-macos.sha256",
+          "name": "bintest-macos.sha256",
+          "label": "bintest-macos.sha256"
+        },
+        {
+          "path": "./bintest-win.exe",
+          "name": "bintest-win.exe",
+          "label": "bintest-win.exe"
+        },
+        {
+          "path": "./bintest-win.exe.sha256",
+          "name": "bintest-win.exe.sha256",
+          "label": "bintest-win.exe.sha256"
+        }
+      ]
+    }
+  ]
+}
