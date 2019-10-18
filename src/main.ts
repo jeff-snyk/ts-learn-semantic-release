@@ -6,3 +6,5 @@ console.log(`msgFromInnerLib: ${msgFromInnerLib}`);
 
 const msgFromOuterLib = callGetMessage();
 console.log(`msgFromOuterLib: ${msgFromOuterLib}`);
+
+console.log('test');
