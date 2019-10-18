@@ -1,0 +1,27 @@
+sudo: false
+language: node_js
+node_js:
+  - "12"
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+install:
+  - npm install
+script:
+  - npm test
+jobs:
+  include:
+    - stage: test
+      script: echo "test stage"
+      name: "Test Stage"
+    - stage: Release
+      if: branch = master AND type != pull_request
+      node_js: "12"
+      script:
+      - npx semantic-release
+      # - npm i -g semantic-release @semantic-release/exec && semantic-release
+branches:
+  only:
+    - "master"

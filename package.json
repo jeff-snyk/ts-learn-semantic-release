@@ -1,6 +1,6 @@
 {
   "name": "jeff-typescript-template",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "",
   "main": "dist/main.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "start": "node dist/main.js",
     "eslint": "eslint --cache '{src,test,scripts,public/js/{!(build)}}/**/*.{js,ts}'",
     "format:check": "prettier --check '{src,test,scripts,public/js/{!(build)}}/**/*.{js,ts}'",
-    "format": "prettier --write '{src,test,scripts,public/js/{!(build)}}/**/*.{js,ts}'"
+    "format": "prettier --write '{src,test,scripts,public/js/{!(build)}}/**/*.{js,ts}'",
+    "semantic-release": "semantic-release"
   },
   "keywords": [],
   "author": "",
@@ -28,7 +29,19 @@
     "eslint-plugin-jest": "^22.15.2",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
+    "semantic-release": "^15.13.24",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeff-snyk/ts-learn-semantic-release.git"
+  },
+  "pkg": {
+    "scripts": [
+      "dist/**/*.js"
+    ],
+    "assets": [
+    ]
   }
 }
