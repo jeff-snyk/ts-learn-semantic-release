@@ -20,8 +20,8 @@ jobs:
       if: branch = master AND type != pull_request
       node_js: "12"
       script:
-      - npx semantic-release
-      # - npm i -g semantic-release @semantic-release/exec && semantic-release
+#      - npx semantic-release
+       - npm i -g semantic-release @semantic-release/exec && semantic-release
 branches:
   only:
     - "master"
