@@ -3,7 +3,7 @@
     "@semantic-release/npm",
     {
       "path": "@semantic-release/exec",
-      "cmd": "npm i -g pkg && pkg . && shasum -a 256 bintest-linux > bintest-linux.sha256 && shasum -a 256 bintest-macos > bintest-macos.sha256 && shasum -a 256 bintest-win.exe > bintest-win.exe.sha256"
+      "cmd": "npm i -g pkg && pkg . -o bintest && shasum -a 256 bintest-linux > bintest-linux.sha256 && shasum -a 256 bintest-macos > bintest-macos.sha256 && shasum -a 256 bintest-win.exe > bintest-win.exe.sha256"
     }
   ],
   "publish": [
