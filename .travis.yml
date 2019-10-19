@@ -20,8 +20,13 @@ jobs:
       if: branch = master AND type != pull_request
       node_js: "12"
       script:
-#      - npx semantic-release
-       - npm i -g semantic-release @semantic-release/exec && semantic-release
+      - npm run pkg
+      - ls -la
+      - shasum -a 256 ts-learn-semantic-release-linux > ts-learn-semantic-release-linux.sha256
+      - shasum -a 256 ts-learn-semantic-release-macos > ts-learn-semantic-release-macos.sha256
+      - shasum -a 256 ts-learn-semantic-release-win.exe > ts-learn-semantic-release-win.exe.sha256
+      - ls -la
+      - npx semantic-release
 branches:
   only:
     - "master"
