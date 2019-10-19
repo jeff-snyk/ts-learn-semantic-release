@@ -1,10 +1,16 @@
 {
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/npm",
+    "@semantic-release/exec"
+  ],
   "prepare": [
     "@semantic-release/npm",
-    {
-      "path": "@semantic-release/exec",
-      "cmd": "npm i -g pkg && pkg . -o bintest && shasum -a 256 bintest-linux > bintest-linux.sha256 && shasum -a 256 bintest-macos > bintest-macos.sha256 && shasum -a 256 bintest-win.exe > bintest-win.exe.sha256"
-    }
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "echo hello"
+      }
   ],
   "publish": [
     "@semantic-release/npm",
@@ -12,34 +18,34 @@
       "path": "@semantic-release/github",
       "assets": [
         {
-          "path": "./bintest-linux",
-          "name": "bintest-linux",
-          "label": "bintest-linux"
+          "path": "./ts-learn-semantic-release-linux",
+          "name": "ts-learn-semantic-release-linux",
+          "label": "ts-learn-semantic-release-linux"
         },
         {
-          "path": "./bintest-linux.sha256",
-          "name": "bintest-linux.sha256",
-          "label": "bintest-linux.sha256"
+          "path": "./ts-learn-semantic-release-linux.sha256",
+          "name": "ts-learn-semantic-release-linux.sha256",
+          "label": "ts-learn-semantic-release-linux.sha256"
         },
         {
-          "path": "./bintest-macos",
-          "name": "bintest-macos",
-          "label": "bintest-macos"
+          "path": "./ts-learn-semantic-release-macos",
+          "name": "ts-learn-semantic-release-macos",
+          "label": "ts-learn-semantic-release-macos"
         },
         {
-          "path": "./bintest-macos.sha256",
-          "name": "bintest-macos.sha256",
-          "label": "bintest-macos.sha256"
+          "path": "./ts-learn-semantic-release-macos.sha256",
+          "name": "ts-learn-semantic-release-macos.sha256",
+          "label": "ts-learn-semantic-release-macos.sha256"
         },
         {
-          "path": "./bintest-win.exe",
-          "name": "bintest-win.exe",
-          "label": "bintest-win.exe"
+          "path": "./ts-learn-semantic-release-win.exe",
+          "name": "ts-learn-semantic-release-win.exe",
+          "label": "ts-learn-semantic-release-win.exe"
         },
         {
-          "path": "./bintest-win.exe.sha256",
-          "name": "bintest-win.exe.sha256",
-          "label": "bintest-win.exe.sha256"
+          "path": "./ts-learn-semantic-release-win.exe.sha256",
+          "name": "ts-learn-semantic-release-win.exe.sha256",
+          "label": "ts-learn-semantic-release-win.exe.sha256"
         }
       ]
     }
